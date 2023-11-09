@@ -92,13 +92,8 @@ app.get("/callback", async (req, res) => {
 
     const id_token = jwt.decode(tokenSet.id_token);
 
-    // "name": "Marcos Felippe Dos Santos Vieira Alves",
-    // "preferred_username": "04741755100",
-    // "given_name": "Marcos Felippe Dos Santos Vieira",
-    // "family_name": "Alves",
-    // "email": "mfelippe.bsb@hotmail.com"
-
-    // await pool.query("DELETE FROM keycloak WHERE state = ?", [state]);
+    
+     await pool.query("DELETE FROM keycloak WHERE state = ?", [state]);
 
     res.status(200).json({
       message: "Você está autenticado!",
